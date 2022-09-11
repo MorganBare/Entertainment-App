@@ -1,8 +1,4 @@
 const theme = {
-    font: {
-      family: "'Outfit Light', monospace",
-      base: '1rem'
-    },
     colors: {
       red: '#FC4747',
       darkBlue: '#10141E',
@@ -10,12 +6,18 @@ const theme = {
       semiDarkBlue: '#161D2F',
       white: '#fff'  
     },
-    spacing: {
-      default: '20px',
-      half: '10px',
-      quarter: '5px',
-      double: '40px',
+    fontSize: {
+      HeadingL: '32px',
+      HeadingM: '24px',
+      HeadingS: '24px',
+      HeadingXS: '18px',
+      BodyM: '15px',
+      BodyS: '13px',
     },
+    fontWeight: {
+        Medium: '500',
+        Light: '300',
+    }
   };
   
   export default theme;

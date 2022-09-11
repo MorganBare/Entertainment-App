@@ -8,6 +8,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     }
 
+    * {
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+    font-family: 'Outfit', sans-serif;
+    }
+
     /* Remove default margin */
     body,
     h1,
@@ -20,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     dl,
     dd {
     margin: 0;
+    }
+
+    body {
+        background-color: ${props => props.theme.colors.darkBlue}
     }
 
     /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */

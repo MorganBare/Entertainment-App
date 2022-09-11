@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 400px;
   height: 418px;
-  background-color: #161d2f;
+  background-color: ${props => props.theme.colors.semiDarkBlue};
   border-radius: 15px;
   padding: 32px;
 `;
@@ -24,10 +24,10 @@ export const Form = styled.form`
 `;
 
 export const Header = styled.h1`
-  font-size: 32px;
+  font-size: ${props => props.theme.fontSize.HeadingL};
   line-height: 40px;
-  font-weight: 300;
-  color: #fff;
+  font-weight: ${props => props.theme.fontWeight.Light};
+  color: ${props => props.theme.colors.white};
 `;
 
 export const Form_Label = styled.label`
