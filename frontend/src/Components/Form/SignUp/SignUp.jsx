@@ -1,5 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import axios from "axios";
 import {
   Wrapper,
   Container,
@@ -12,21 +14,55 @@ import {
 } from "../Form.styled";
 
 const SignUp = () => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    password2: "",
+  });
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { data } = await axios.post(
+      "http://localhost:5000/auth/register",
+      user
+    );
+
+    if (data.success) {
+      navigate("/login");
+    }
+  };
   return (
     <Wrapper>
       <Container>
         <Header>Sign Up</Header>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Input_Container>
-            <Form_Input placeholder="Email address" type="email" required />
+            <Form_Input
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              placeholder="Email address"
+              type="email"
+              required
+            />
           </Input_Container>
 
           <Input_Container>
-            <Form_Input placeholder="Password" type="password" required />
+            <Form_Input
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              placeholder="Password"
+              type="password"
+              required
+            />
           </Input_Container>
 
           <Input_Container>
-            <Form_Input placeholder="Repeat Password" required />
+            <Form_Input
+              value={user.password2}
+              onChange={(e) => setUser({ ...user, password2: e.target.value })}
+              placeholder="Repeat Password"
+              required
+            />
           </Input_Container>
 
           <Form_Button type="submit">Create an account </Form_Button>
