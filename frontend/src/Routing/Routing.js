@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { SignUp, Login } from "Components";
 
 const Routing = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<SignUp />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
