@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 400px;
   height: 418px;
-  background-color: #161d2f;
+  background-color: ${props => props.theme.colors.semiDarkBlue};
   border-radius: 15px;
   padding: 32px;
 `;
@@ -24,10 +24,10 @@ export const Form = styled.form`
 `;
 
 export const Header = styled.h1`
-  font-size: 32px;
+  font-size: ${props => props.theme.fontSize.HeadingL};
   line-height: 40px;
-  font-weight: 300;
-  color: #fff;
+  font-weight: ${props => props.theme.fontWeight.Light};
+  color: ${props => props.theme.colors.white};
 `;
 
 export const Form_Label = styled.label`
@@ -35,23 +35,25 @@ export const Form_Label = styled.label`
 `;
 
 export const Form_Input = styled.input`
-  background-color: #161d2f;
+  background-color: ${props => props.theme.colors.semiDarkBlue};
   border: none;
-  border-bottom: 1px solid #8b8e97;
-  padding: 3px 8px 6px;
+  border-bottom: 1px solid ${props => props.theme.colors.greyishBlue};
+  padding: 8px;
   margin: 0.75rem 0;
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   width: 100%;
+  caret-color: ${props => props.theme.colors.red};
 
   &::placeholder {
-    color: #8b8e97;
+    color: hsla(0, 0%, 50%);
     font-weight: 300;
     font-size: 15px;
   }
 
-  &:focus {
-    outline: none;
+  &:hover {
+    cursor: pointer;
   }
+
   // If you have name and password saved into your browser, it will auto populate the inout fields. The problem I found was when it auto populated, the background color changed to white. To see it in action, comment out the code below.
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
@@ -61,17 +63,19 @@ export const Form_Input = styled.input`
     -webkit-text-fill-color: #fff !important;
   }
 
-  &:active {
-    background-color: #161d2f;
+  &:active,
+  &:focus {
+    border-bottom: 1px solid ${props => props.theme.colors.white};
+    outline: none;
   }
 `;
 
 export const Form_Button = styled.button`
-  background-color: #fc4747;
-  color: #fff;
+  background-color: ${props => props.theme.colors.red};
+  color: ${props => props.theme.colors.white};
   width: 100%;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: ${props => props.theme.fontWeight.Light};
   padding: 10px 0;
   border-radius: 5px;
   border: none;
