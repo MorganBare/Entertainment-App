@@ -11,6 +11,7 @@ import {
   Form_Input,
   Form_Button,
   Form_Text,
+  Error,
 } from "../Form.styled";
 
 const Register = () => {
@@ -18,7 +19,9 @@ const Register = () => {
     email: "",
     password: "",
     password2: "",
+    error: "",
   });
+
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,12 +40,13 @@ const Register = () => {
         navigate("/login");
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.msg);
     }
   };
   return (
     <Wrapper>
       <Container>
+        <Error></Error>
         <Header>Sign Up</Header>
         <Form onSubmit={handleSubmit}>
           <Input_Container>
