@@ -1,9 +1,9 @@
-import { SignUp } from "./Components";
+import Routing from "./Routing/Routing";
 
 function App() {
   return (
     <>
-      <SignUp />
+      <Routing />
     </>
   );
 }
