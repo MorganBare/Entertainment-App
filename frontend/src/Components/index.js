@@ -1,4 +1,4 @@
-import SignUp from "./Form/SignUp/SignUp";
+import Register from "./Form/SignUp/Register";
 import Login from "./Form/Login/Login";
 
-export { SignUp, Login };
+export { Register, Login };
