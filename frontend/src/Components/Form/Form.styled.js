@@ -95,3 +95,7 @@ export const Form_Text = styled.p`
     padding-left: 4px;
   }
 `;
+
+export const Error = styled.span`
+  color: #fc4747;
+`;
