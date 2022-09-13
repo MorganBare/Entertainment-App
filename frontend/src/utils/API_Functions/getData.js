@@ -1,3 +1,4 @@
+import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -18,3 +19,15 @@ export const getTrending = async (media_type, time_window) => {
   );
   return res.data.results;
 };
+
+// How to import the function
+// import { getTrending } from "./utils/API_Functions/getData";
+// /-----------------------------/
+// How to call the function:
+// const data = async () => {
+//   const trending = await getTrending("all", "day");
+//   console.log(trending);
+// };
+// useEffect(() => {
+//   data();
+// }, []);
