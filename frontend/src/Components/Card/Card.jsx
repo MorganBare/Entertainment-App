@@ -18,6 +18,7 @@ const Card = ({ item }) => {
     poster_path,
     original_language,
     adult,
+    first_air_date,
   } = item;
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
@@ -28,7 +29,7 @@ const Card = ({ item }) => {
         <CardImage src={`${imagePrefix}${poster_path}`} />
       </ImageContainer>
       <CardContent>
-        <Info>Release: {release_date}</Info>
+        <Info>Release: {release_date ?? first_air_date}</Info>
         <Info>Lan: {original_language}</Info>
         <Info>{overview}</Info>
         <Info>{media_type}</Info>
