@@ -27,14 +27,16 @@ export const CardContent = styled.div`
 `;
 export const Info = styled.span`
   color: #fff;
-  font-size: 13px;
-  color: #c3c4c7;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "13px")};
+  color: ${({ color }) => (color ? color : "#c3c4c7")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "500")};
 
   // resize the svg icon
 `;
 export const CardTitle = styled.h3`
   color: #fff;
   font-size: 16px;
+  font-weight: 500;
 `;
 export const Paragraph = styled.p`
   display: -webkit-box;
