@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  -webkit-box-shadow: 0px 0px 15px -4px #fff;
-  box-shadow: 0px 0px 15px -8px #fff;
   border-radius: 5px;
-  flex: 1 0 20%;
+  flex: 1 0 250px;
 `;
 export const ImageContainer = styled.div`
   margin: 0 auto;
@@ -14,12 +12,34 @@ export const CardImage = styled.img`
   border-radius: 5px;
 `;
 export const CardContent = styled.div`
+  margin-top: 0.5em;
   color: #fff;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 0.5em;
+  }
+
+  svg {
+    transform: scale(0.6);
+  }
 `;
 export const Info = styled.span`
   color: #fff;
-  display: block;
+  font-size: 13px;
+  color: #c3c4c7;
+
+  // resize the svg icon
 `;
 export const CardTitle = styled.h3`
   color: #fff;
+  font-size: 16px;
+`;
+export const Paragraph = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
