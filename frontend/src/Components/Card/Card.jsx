@@ -26,7 +26,6 @@ const Card = ({ item }) => {
     : first_air_date.slice(0, 4);
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
-  console.log(item);
   return (
     <CardContainer>
       <ImageContainer>
