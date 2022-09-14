@@ -1,4 +1,7 @@
 import React from "react";
+import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
+import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
+
 import {
   CardContainer,
   ImageContainer,
@@ -14,12 +17,13 @@ const Card = ({ item }) => {
     name,
     release_date,
     media_type,
-    overview,
     poster_path,
-    original_language,
     adult,
     first_air_date,
   } = item;
+  const formatDate = release_date
+    ? release_date.slice(0, 4)
+    : first_air_date.slice(0, 4);
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
   console.log(item);
@@ -29,10 +33,11 @@ const Card = ({ item }) => {
         <CardImage src={`${imagePrefix}${poster_path}`} />
       </ImageContainer>
       <CardContent>
-        <Info>Release: {release_date ?? first_air_date}</Info>
-        <Info>Lan: {original_language}</Info>
-        <Info>{overview}</Info>
-        <Info>{media_type}</Info>
+        <Info>{formatDate} .</Info>
+
+        {media_type === "movie" ? <MovieIcon /> : <TvSeries />}
+
+        <Info>{media_type} .</Info>
         <Info>{adult ? "18+" : "PG"}</Info>
       </CardContent>
       <CardTitle>{title ?? name}</CardTitle>
