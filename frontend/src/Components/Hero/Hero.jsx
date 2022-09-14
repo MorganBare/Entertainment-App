@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "../../Components";
 import { HeroContainer, Row } from "./Hero.styled";
+import { Info } from "../Card/Card.styled";
 import { getTrending } from "../../utils/API_Functions/getData";
 const Hero = () => {
   const [movies, setMovies] = useState([]);
@@ -16,13 +17,18 @@ const Hero = () => {
 
   return (
     <HeroContainer>
-      <Row>
-        {movies ? (
-          movies.map((item) => <Card key={item.id} item={item} />)
-        ) : (
-          <h1>loading...</h1>
-        )}
-      </Row>
+      <section>
+        <Info fontSize="32px" color="fff" fontWeight="300">
+          Popular Movies
+        </Info>
+        <Row>
+          {movies ? (
+            movies.map((item) => <Card key={item.id} item={item} />)
+          ) : (
+            <h1>loading...</h1>
+          )}
+        </Row>
+      </section>
     </HeroContainer>
   );
 };
