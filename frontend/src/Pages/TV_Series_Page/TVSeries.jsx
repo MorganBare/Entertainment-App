@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Hero } from "../../Components";
-import { getTrending } from "../../utils/API_Functions/getData";
-import { randomizeData } from "../../utils/API_Functions/getRandomData";
+import { Hero, SideBar } from "Components";
+import { getTrending } from "utils/API_Functions/getData";
+import { randomizeData } from "utils/API_Functions/getRandomData";
+import { LayoutContainer } from "Components/Layout/Layout.styled";
 
 const TVSeries = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,18 @@ const TVSeries = () => {
     // Go to http://localhost:3000/tv-series and refresh the page to see the random TV Series.
     data();
   }, []);
-  return <Hero movies={movies} title="TV Series" />;
+  return (
+    <>
+      <LayoutContainer>
+        <div>
+          <SideBar />
+        </div>
+        <div>
+          <Hero movies={movies} title="TV Series" />
+        </div>
+      </LayoutContainer>
+    </>
+  );
 };
 
 export default TVSeries;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Hero } from "../../Components";
-import { getTrending } from "../../utils/API_Functions/getData";
-import { randomizeData } from "../../utils/API_Functions/getRandomData";
+import { Hero, SideBar } from "Components";
+import { getTrending } from "utils/API_Functions/getData";
+import { randomizeData } from "utils/API_Functions/getRandomData";
+import { LayoutContainer } from "Components/Layout/Layout.styled";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,16 @@ const Home = () => {
   useEffect(() => {
     data();
   }, []);
-  return <Hero movies={movies} title="Trending" />;
+  return (
+    <LayoutContainer>
+      <div>
+        <SideBar />
+      </div>
+      <div>
+        <Hero movies={movies} title="Trending" />
+      </div>
+    </LayoutContainer>
+  );
 };
 
 export default Home;
