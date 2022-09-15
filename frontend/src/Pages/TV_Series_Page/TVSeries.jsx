@@ -20,7 +20,7 @@ const TVSeries = () => {
   return (
     <>
       <LayoutContainer>
-        <div>
+        <div style={{ paddingLeft: "1.5em" }}>
           <SideBar />
         </div>
         <div>

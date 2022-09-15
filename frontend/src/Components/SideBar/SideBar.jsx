@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { SideBarContainer } from "./SideBar.styled";
 import { ReactComponent as Movies } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
@@ -16,11 +17,15 @@ const SideBar = () => {
         <Home />
       </div>
       <div>
-        <Movies />
+        <Link to="/movies">
+          <Movies />
+        </Link>
       </div>
 
       <div>
-        <TV />
+        <Link to="/tv-series">
+          <TV />
+        </Link>
       </div>
       <div>
         <BookMark />
