@@ -1,25 +1,13 @@
-import { useEffect, useState } from "react";
 import { Card } from "../../Components";
 import { HeroContainer, Row } from "./Hero.styled";
 import { Info } from "../Card/Card.styled";
-import { getTrending } from "../../utils/API_Functions/getData";
-const Hero = () => {
-  const [movies, setMovies] = useState([]);
-  const data = async () => {
-    const trending = await getTrending("all", "day");
-    setMovies(trending);
 
-    console.log(movies);
-  };
-  useEffect(() => {
-    data();
-  }, []);
-
+const Hero = ({ movies, title }) => {
   return (
     <HeroContainer>
       <section>
         <Info fontSize="32px" color="fff" fontWeight="300">
-          Popular Movies
+          {title}
         </Info>
         <Row>
           {movies ? (
