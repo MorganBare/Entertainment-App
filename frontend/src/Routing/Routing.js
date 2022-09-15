@@ -9,7 +9,7 @@ const Routing = () => {
       <Routes>
         <Route path="/" element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
-          <Route path="/Movies" element={<Movies />} />
+          <Route path="/movies" element={<Movies />} />
         </Route>
 
         <Route path="/sign-up" element={<Register />} />
