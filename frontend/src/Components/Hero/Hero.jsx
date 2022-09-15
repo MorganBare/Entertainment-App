@@ -1,10 +1,11 @@
-import { Card } from "../../Components";
+import { Card, Search } from "../../Components";
 import { HeroContainer, Row } from "./Hero.styled";
 import { Info } from "../Card/Card.styled";
 
 const Hero = ({ movies, title }) => {
   return (
     <HeroContainer>
+      <Search />
       <section>
         <Info fontSize="32px" color="fff" fontWeight="300">
           {title}
