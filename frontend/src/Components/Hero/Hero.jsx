@@ -7,7 +7,13 @@ const Hero = ({ movies, title }) => {
     <HeroContainer>
       <Search />
       <section>
-        <Info fontSize="32px" color="fff" fontWeight="300">
+        <Info
+          padding=".5em 0"
+          display="block"
+          fontSize="32px"
+          color="fff"
+          fontWeight="300"
+        >
           {title}
         </Info>
         <Row>
