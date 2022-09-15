@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
-  margin: 3em;
+  margin: 1em;
 `;
 
 export const Row = styled.div`
