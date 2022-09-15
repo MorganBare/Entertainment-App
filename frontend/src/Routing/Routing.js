@@ -1,13 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Register, Login } from "Components";
-import { Hero } from "Components";
+import { Register, Login, ProtectedRoute } from "Components";
+import { Home, Movies } from "Pages";
 
 const Routing = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/Movies" element={<Movies />} />
+        </Route>
+
         <Route path="/sign-up" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
