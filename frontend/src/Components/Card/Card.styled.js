@@ -30,6 +30,8 @@ export const Info = styled.span`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "13px")};
   color: ${({ color }) => (color ? color : "#c3c4c7")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "500")};
+  display: ${({ display }) => (display ? display : "block")};
+  padding: ${({ padding }) => (padding ? padding : "0")};
 
   // resize the svg icon
 `;
