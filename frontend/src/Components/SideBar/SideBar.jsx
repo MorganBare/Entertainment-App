@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SideBarContainer } from "./SideBar.styled";
+import { SideBarContainer, MainLinksContainer } from "./SideBar.styled";
 import { ReactComponent as Movies } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as BookMark } from "../../assets/icon-nav-bookmark.svg";
@@ -13,6 +13,7 @@ const SideBar = () => {
       <div>
         <Logo />
       </div>
+      <MainLinksContainer>
       <div>
         <Link to="/">
           <Home />
@@ -23,7 +24,6 @@ const SideBar = () => {
           <Movies />
         </Link>
       </div>
-
       <div>
         <Link to="/tv-series">
           <TV />
@@ -32,7 +32,7 @@ const SideBar = () => {
       <div>
         <BookMark />
       </div>
-      <div></div>
+      </MainLinksContainer>
     </SideBarContainer>
   );
 };

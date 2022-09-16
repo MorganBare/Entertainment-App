@@ -8,7 +8,7 @@ const TVSeries = () => {
   const [movies, setMovies] = useState([]);
 
   const data = async () => {
-    const trending = await getTrending("tv", "day");
+    const trending = await getTrending("tv", "week");
     setMovies(randomizeData(trending));
   };
   useEffect(() => {
