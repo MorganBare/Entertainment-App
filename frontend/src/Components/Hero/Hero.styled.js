@@ -5,7 +5,9 @@ export const HeroContainer = styled.div`
 `;
 
 export const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(154px, 1fr) );
+  grid-gap: .5em;
+  border: 1px solid yellow;
+  padding: 1em;
 `;

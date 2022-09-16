@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   border-radius: 5px;
-  flex: 1 0 250px;
+  flex: 1 0 154px;
+  border: 1px solid red;
+  width: 154px;
 `;
 export const ImageContainer = styled.div`
   margin: 0 auto;

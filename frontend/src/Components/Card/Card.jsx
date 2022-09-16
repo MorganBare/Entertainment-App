@@ -24,7 +24,7 @@ const Card = ({ item }) => {
   const formatDate = release_date
     ? release_date.slice(0, 4)
     : first_air_date.slice(0, 4);
-  const imagePrefix = "http://image.tmdb.org/t/p/w500";
+  const imagePrefix = "http://image.tmdb.org/t/p/w154";
 
   return (
     <CardContainer>
