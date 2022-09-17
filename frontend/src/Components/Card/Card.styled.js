@@ -59,4 +59,5 @@ export const IconContainer = styled.div`
   border-radius: 50%;
   height: 32px;
   width: 32px;
+  cursor: pointer;
 `;
