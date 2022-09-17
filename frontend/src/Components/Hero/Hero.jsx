@@ -9,7 +9,7 @@ const Hero = ({ movies, title }) => {
 
   return (
     <HeroContainer>
-      <Search search={search} setSearch={setSearch} />
+      <Search title={title} search={search} setSearch={setSearch} />
       <section>
         <Info
           padding=".5em 0"
