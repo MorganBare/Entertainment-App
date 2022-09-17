@@ -13,5 +13,10 @@ export const SideBarContainer = styled.div`
 
   svg {
     transform: scale(1);
+
+    // on hover change the color of the svg icon
+    &:hover {
+      fill: #fff;
+    }
   }
 `;
