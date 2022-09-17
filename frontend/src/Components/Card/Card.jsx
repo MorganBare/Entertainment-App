@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
 import { ReactComponent as BookMark } from "../../assets/icon-bookmark-empty.svg";
@@ -13,7 +14,10 @@ import {
   IconContainer,
 } from "./Card.styled.js";
 
+import { addBookMark } from "../../Redux/Slices/bookmark/bookMarkSlice";
+
 const Card = ({ movie }) => {
+  const dispatch = useDispatch();
   const {
     title,
     name,
@@ -22,18 +26,19 @@ const Card = ({ movie }) => {
     poster_path,
     adult,
     first_air_date,
-    id,
   } = movie;
   const formatDate = release_date
     ? release_date.slice(0, 4)
     : first_air_date.slice(0, 4);
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
-  const saveBookMark = (id) => {};
+  const saveBookMark = (movie) => {
+    dispatch(addBookMark(movie));
+  };
 
   return (
     <CardContainer>
-      <IconContainer onClick={() => saveBookMark(id)}>
+      <IconContainer onClick={() => saveBookMark(movie)}>
         <BookMark />
       </IconContainer>
       <ImageContainer>
