@@ -30,7 +30,9 @@ const SideBar = () => {
         </Link>
       </div>
       <div>
-        <BookMark />
+        <Link to="/bookmarks">
+          <BookMark />
+        </Link>
       </div>
       <div></div>
     </SideBarContainer>
