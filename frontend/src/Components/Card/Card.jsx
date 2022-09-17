@@ -22,15 +22,18 @@ const Card = ({ movie }) => {
     poster_path,
     adult,
     first_air_date,
+    id,
   } = movie;
   const formatDate = release_date
     ? release_date.slice(0, 4)
     : first_air_date.slice(0, 4);
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
+  const saveBookMark = (id) => {};
+
   return (
     <CardContainer>
-      <IconContainer>
+      <IconContainer onClick={() => saveBookMark(id)}>
         <BookMark />
       </IconContainer>
       <ImageContainer>
