@@ -19,4 +19,10 @@ export const SideBarContainer = styled.div`
       fill: #fff;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    min-height: 70px !important;
+  }
 `;

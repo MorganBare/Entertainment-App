@@ -9,6 +9,10 @@ export const SearchContainer = styled.div`
     margin-right: 5px;
     transform: scale(0.8);
   }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0.3em;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -26,5 +30,9 @@ export const SearchInput = styled.input`
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
   }
 `;
