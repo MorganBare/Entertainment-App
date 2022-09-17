@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   border-radius: 5px;
-  flex: 1 0 250px;
 `;
 export const ImageContainer = styled.div`
   margin: 0 auto;
