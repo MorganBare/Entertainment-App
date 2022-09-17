@@ -1,11 +1,15 @@
+import { useState } from "react";
+
 import { Card, Search } from "../../Components";
 import { HeroContainer, Row } from "./Hero.styled";
 import { Info } from "../Card/Card.styled";
 
 const Hero = ({ movies, title }) => {
+  const [search, setSearch] = useState("");
+
   return (
     <HeroContainer>
-      <Search />
+      <Search search={search} setSearch={setSearch} />
       <section>
         <Info
           padding=".5em 0"
@@ -17,11 +21,19 @@ const Hero = ({ movies, title }) => {
           {title}
         </Info>
         <Row>
-          {movies ? (
-            movies.map((item) => <Card key={item.id} item={item} />)
-          ) : (
-            <h1>loading...</h1>
-          )}
+          {movies &&
+            movies
+              .filter((movie) => {
+                if (search === "") {
+                  return movie;
+                } else if (
+                  movie?.title?.toLowerCase().includes(search.toLowerCase()) ||
+                  movie?.name?.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return movie;
+                }
+              })
+              .map((movie) => <Card key={movie.id} movie={movie} />)}
         </Row>
       </section>
     </HeroContainer>
