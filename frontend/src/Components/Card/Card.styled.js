@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   border-radius: 5px;
+  position: relative;
 `;
 export const ImageContainer = styled.div`
   margin: 0 auto;
@@ -45,4 +46,17 @@ export const Paragraph = styled.p`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+`;
+
+export const IconContainer = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #74777c;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
 `;

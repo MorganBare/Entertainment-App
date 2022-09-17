@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
+import { ReactComponent as BookMark } from "../../assets/icon-bookmark-empty.svg";
 
 import {
   CardContainer,
@@ -9,6 +10,7 @@ import {
   CardTitle,
   CardContent,
   Info,
+  IconContainer,
 } from "./Card.styled.js";
 
 const Card = ({ movie }) => {
@@ -28,6 +30,9 @@ const Card = ({ movie }) => {
 
   return (
     <CardContainer>
+      <IconContainer>
+        <BookMark />
+      </IconContainer>
       <ImageContainer>
         <CardImage src={`${imagePrefix}${poster_path}`} />
       </ImageContainer>
