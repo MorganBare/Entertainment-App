@@ -11,7 +11,7 @@ import {
   Info,
 } from "./Card.styled.js";
 
-const Card = ({ item }) => {
+const Card = ({ movie }) => {
   const {
     title,
     name,
@@ -20,7 +20,7 @@ const Card = ({ item }) => {
     poster_path,
     adult,
     first_air_date,
-  } = item;
+  } = movie;
   const formatDate = release_date
     ? release_date.slice(0, 4)
     : first_air_date.slice(0, 4);
@@ -34,7 +34,11 @@ const Card = ({ item }) => {
       <CardContent>
         <Info>{formatDate} .</Info>
 
-        {media_type === "movie" ? <MovieIcon /> : <TvSeries />}
+        {media_type === "movie" ? (
+          <MovieIcon className="hover" />
+        ) : (
+          <TvSeries className="hover" />
+        )}
 
         <Info>{media_type} .</Info>
         <Info>{adult ? "18+" : "PG"}</Info>
