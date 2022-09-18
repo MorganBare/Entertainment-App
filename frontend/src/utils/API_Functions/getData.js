@@ -18,7 +18,11 @@ export const getTrending = async (media_type, time_window) => {
     `${BASE_URL}/trending/${media_type}/${time_window}?api_key=${API_KEY}&language=en-US`
   );
   // So, I ran into a slight issue. On the Figma there are 2 different icons and I needed a way to know which card has been bookmarked. So, I map what comes back fRom the API and add  a property called isBookmarked to every object.
-  return data.results.map((item) => ({ ...item, isBookmarked: false }));
+  return data.results.map((item) => ({
+    ...item,
+    isBookMarked: false,
+    type: media_type,
+  }));
 };
 
 // How to import the function

@@ -33,7 +33,9 @@ const Hero = ({ movies, title }) => {
                   return movie;
                 }
               })
-              .map((movie) => <Card key={movie.id} movie={movie} />)}
+              .map((movie) => (
+                <Card key={movie.id} movie={movie} mytitle={title} />
+              ))}
         </Row>
       </section>
     </HeroContainer>

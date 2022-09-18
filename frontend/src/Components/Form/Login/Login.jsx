@@ -31,7 +31,6 @@ const Login = () => {
       if (data.status === "success") {
         localStorage.setItem("token", data.token);
         const decodedToken = decodeToken(data.token);
-        console.log(data);
       }
     } catch (error) {
       console.log(error);

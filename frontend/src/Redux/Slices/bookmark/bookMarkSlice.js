@@ -38,10 +38,42 @@ const bookMarkSlice = createSlice({
   initialState,
   reducers: {
     addBookMark: (state, { payload }) => {
-      state.bookMark.push(payload);
-    },
-    removeBookMark: (state, { payload }) => {
-      state.bookMark = state.bookMark.filter((book) => book.id !== payload.id);
+      const { movie } = payload;
+      if (movie.type === "all") {
+        state.trending = state.trending.map((item) => {
+          if (item.id === movie.id) {
+            item.isBookMarked = !item.isBookMarked;
+          }
+          return item;
+        });
+      } else if (movie.type === "tv") {
+        state.tvSeries = state.tvSeries.map((item) => {
+          if (item.id === movie.id) {
+            item.isBookMarked = !item.isBookMarked;
+          }
+          return item;
+        });
+      } else if (movie.type === "movie") {
+        state.movies = state.movies.map((item) => {
+          if (item.id === movie.id) {
+            item.isBookMarked = !item.isBookMarked;
+          }
+          return item;
+        });
+      }
+      // map over the bookmark array, if the object is not in there , push it to the array, else, return;
+
+      const isBookMarked = state.bookMark.find((item) => {
+        return item.id === movie.id;
+      });
+
+      if (!isBookMarked) {
+        state.bookMark.push({ ...movie, isBookMarked: true });
+      } else {
+        state.bookMark = state.bookMark.filter((item) => {
+          return item.id !== movie.id;
+        });
+      }
     },
   },
   extraReducers: (builder) => {
@@ -80,7 +112,7 @@ const bookMarkSlice = createSlice({
   },
 });
 
-export const { addBookMark, removeBookMark } = bookMarkSlice.actions;
+export const { addBookMark } = bookMarkSlice.actions;
 
 export const selectTrending = (state) => state.bookMark.trending;
 export const selectTvSeries = (state) => state.bookMark.tvSeries;
