@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Hero, SideBar } from "Components";
-import { getTrending } from "utils/API_Functions/getData";
-import { randomizeData } from "utils/API_Functions/getRandomData";
+import { useSelector } from "react-redux";
 import { LayoutContainer } from "Components/Layout/Layout.styled";
 
-const Home = () => {
-  const [movies, setMovies] = useState([]);
+import { selectTrending } from "../../Redux/Slices/bookmark/bookMarkSlice";
 
-  const data = async () => {
-    // Same data function as in TVSeries.jsx
-    const trending = await getTrending("all", "week");
-    // Same random function as in TVSeries.jsx
-    setMovies(randomizeData(trending));
-  };
-  useEffect(() => {
-    data();
-  }, []);
+const Home = () => {
+  const trending = useSelector(selectTrending);
+
   return (
     <LayoutContainer>
       <div style={{ paddingLeft: "1.5em" }}>
         <SideBar />
       </div>
       <div>
-        <Hero movies={movies} title="Trending" />
+        <Hero movies={trending} title="Trending" />
       </div>
     </LayoutContainer>
   );
