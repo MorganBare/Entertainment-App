@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
-import { ReactComponent as BookMark } from "../../assets/icon-bookmark-empty.svg";
+import { ReactComponent as BookMarkFill } from "../../assets/icon-bookmark-full.svg";
 
 import {
   CardContainer,
@@ -18,6 +18,7 @@ import { addBookMark } from "../../Redux/Slices/bookmark/bookMarkSlice";
 
 const Card = ({ movie }) => {
   const dispatch = useDispatch();
+
   const {
     title,
     name,
@@ -33,13 +34,18 @@ const Card = ({ movie }) => {
   const imagePrefix = "http://image.tmdb.org/t/p/w500";
 
   const saveBookMark = (movie) => {
-    dispatch(addBookMark(movie));
+    const bookMarked = {
+      ...movie,
+      isBookmarked: true,
+    };
+    // Map over the bookMarkedMovies and if we don't have a match then add the movie to the bookMarkedMovies. If we do have a match the setState to true
+    dispatch(addBookMark(bookMarked));
   };
 
   return (
     <CardContainer>
       <IconContainer onClick={() => saveBookMark(movie)}>
-        <BookMark />
+        <BookMarkFill />
       </IconContainer>
       <ImageContainer>
         <CardImage src={`${imagePrefix}${poster_path}`} />
