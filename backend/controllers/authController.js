@@ -10,7 +10,6 @@ module.exports = {
   register: async (req, res) => {
     // I am doing extra checks on this project because on the figma files, they want errors to show up when the password checks fail.
     try {
-      console.log(req.body);
       // 1. get email and password from req.body
       const { email, password } = req.body;
 

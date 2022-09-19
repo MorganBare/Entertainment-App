@@ -4,6 +4,7 @@ export const CardContainer = styled.div`
   width: 154px;
   border-radius: 5px;
   justify-self: center;
+  position: relative;
   background-color: hsla(223, 36%, 14%, 0.4);
   -webkit-box-shadow: 0px 7px 23px 2px rgba(0,0,0,0.82); 
   box-shadow: 0px 7px 23px 2px rgba(0,0,0,0.82);
@@ -49,4 +50,18 @@ export const Paragraph = styled.p`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+`;
+
+export const IconContainer = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #74777c;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
 `;

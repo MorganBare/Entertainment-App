@@ -2,12 +2,14 @@ import React from "react";
 import { SearchInput, SearchContainer } from "./Search.styled.js"
 import { ReactComponent as SearchIcon} from "../../assets/icon-search.svg"
 
-const Search = () => {
+const Search = ({ title, search, setSearch }) => {
   return (
     <SearchContainer>
-      <SearchIcon/>
+      <SearchIcon />
       <SearchInput
-        placeholder="Search for movies or TV series"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder={`Search for ${title}`}
         type="text"
         name=""
         id=""

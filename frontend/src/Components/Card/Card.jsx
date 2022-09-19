@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
 import Oval from "../../assets/Oval.png"
+import { ReactComponent as BookMarkFill } from "../../assets/icon-bookmark-full.svg";
+import { ReactComponent as BookMarkIcon } from "../../assets/icon-bookmark-empty.svg";
 
 import {
   CardContainer,
@@ -10,9 +13,14 @@ import {
   CardTitle,
   CardContent,
   Info,
+  IconContainer,
 } from "./Card.styled.js";
 
-const Card = ({ item }) => {
+import { addBookMark } from "../../Redux/Slices/bookmark/bookMarkSlice";
+
+const Card = ({ movie, mytitle }) => {
+  const dispatch = useDispatch();
+
   const {
     title,
     name,
@@ -21,14 +29,21 @@ const Card = ({ item }) => {
     poster_path,
     adult,
     first_air_date,
-  } = item;
+  } = movie;
   const formatDate = release_date
     ? release_date.slice(0, 4)
     : first_air_date.slice(0, 4);
-  const imagePrefix = "http://image.tmdb.org/t/p/w154";
-  console.log(item)
+  const imagePrefix = "http://image.tmdb.org/t/p/w500";
+
+  const add_or_remove_bookmark = (movie) => {
+    dispatch(addBookMark({ movie }));
+  };
+
   return (
     <CardContainer>
+      <IconContainer onClick={() => add_or_remove_bookmark(movie)}>
+        {movie.isBookMarked ? <BookMarkFill /> : <BookMarkIcon />}
+      </IconContainer>
       <ImageContainer>
         <CardImage src={`${imagePrefix}${poster_path}`} />
       </ImageContainer>
@@ -36,10 +51,13 @@ const Card = ({ item }) => {
         <Info>{formatDate}</Info>
         <img src={Oval} alt='Oval'/>
 
-        <Info>{media_type === "movie" ? <MovieIcon /> : <TvSeries />}</Info>
-        <Info>{media_type === 'tv' ? 'TV Series' : 'Movie'}</Info>
-        
-        <img src={Oval} alt='Oval'/>
+        {media_type === "movie" ? (
+          <MovieIcon className="hover" />
+        ) : (
+          <TvSeries className="hover" />
+        )}
+
+        <Info>{media_type} .</Info>
         <Info>{adult ? "18+" : "PG"}</Info>
       </CardContent>
       <CardTitle>{title ?? name}</CardTitle>

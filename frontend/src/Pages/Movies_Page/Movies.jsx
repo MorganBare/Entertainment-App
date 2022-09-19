@@ -1,29 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Hero, SideBar } from "../../Components";
-import { getTrending } from "../../utils/API_Functions/getData";
+import React from "react";
+import { Hero, SideBar } from "Components";
+import { useSelector } from "react-redux";
 import { LayoutContainer } from "Components/Layout/Layout.styled";
+
+import { selectMovies } from "../../Redux/Slices/bookmark/bookMarkSlice";
+
 const Movies = () => {
-  const [movies, setMovies] = useState([]);
-  const data = async () => {
-    const trending = await getTrending("movie", "week");
-    setMovies(trending);
-  };
-  useEffect(() => {
-    data();
-  }, []);
+  const trending = useSelector(selectMovies);
 
   return (
-    <>
-      {" "}
-      <LayoutContainer>
-        <div style={{ paddingLeft: "1.5em" }}>
-          <SideBar />
-        </div>
-        <div>
-          <Hero movies={movies} title="Movies" />
-        </div>
-      </LayoutContainer>
-    </>
+    <LayoutContainer>
+      <div style={{ paddingLeft: "1.5em" }}>
+        <SideBar />
+      </div>
+      <div>
+        <Hero movies={trending} title="Movies" />
+      </div>
+    </LayoutContainer>
   );
 };
 

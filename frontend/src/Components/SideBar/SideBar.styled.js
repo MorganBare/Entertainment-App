@@ -13,6 +13,17 @@ export const SideBarContainer = styled.div`
 
   svg {
     transform: scale(1);
+
+    // on hover change the color of the svg icon
+    &:hover {
+      fill: #fff;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    min-height: 70px !important;
   }
 `;
 

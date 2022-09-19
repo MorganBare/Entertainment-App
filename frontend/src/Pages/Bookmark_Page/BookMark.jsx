@@ -1,12 +1,11 @@
 import React from "react";
-import { Hero, SideBar } from "Components";
 import { useSelector } from "react-redux";
+import { selectBookMark } from "../../Redux/Slices/bookmark/bookMarkSlice";
+import { Hero, SideBar } from "Components";
 import { LayoutContainer } from "Components/Layout/Layout.styled";
 
-import { selectTrending } from "../../Redux/Slices/bookmark/bookMarkSlice";
-
-const Home = () => {
-  const trending = useSelector(selectTrending);
+const BookMark = () => {
+  const bookMarkedMovies = useSelector(selectBookMark);
 
   return (
     <LayoutContainer>
@@ -14,10 +13,10 @@ const Home = () => {
         <SideBar />
       </div>
       <div>
-        <Hero movies={trending} title="Trending" />
+        <Hero movies={bookMarkedMovies} title="Book marked" />
       </div>
     </LayoutContainer>
   );
 };
 
-export default Home;
+export default BookMark;
