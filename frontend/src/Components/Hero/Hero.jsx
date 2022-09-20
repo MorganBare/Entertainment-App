@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Card, Search } from "../../Components";
-import { HeroContainer, Row, Title } from "./Hero.styled";
+import { HeroContainer, Row, Title, Section } from "./Hero.styled";
 
 const Hero = ({ movies, title }) => {
   const [search, setSearch] = useState("");
@@ -9,7 +9,7 @@ const Hero = ({ movies, title }) => {
   return (
     <HeroContainer>
       <Search title={title} search={search} setSearch={setSearch} />
-      <section>
+      <Section>
           <Title>{title}</Title>
         <Row>
           {movies &&
@@ -28,7 +28,7 @@ const Hero = ({ movies, title }) => {
                 <Card key={movie.id} movie={movie} mytitle={title} />
               ))}
         </Row>
-      </section>
+      </Section>
     </HeroContainer>
   );
 };
