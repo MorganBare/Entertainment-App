@@ -15,6 +15,7 @@ export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.HeadingL};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
+  margin-bottom: 15px;
 `;
 
 export const Section = styled.div`
