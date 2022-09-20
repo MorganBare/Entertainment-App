@@ -27,6 +27,7 @@ export const SearchInput = styled.input`
   color: ${({ color }) => (color ? color : "#c3c4c7")};
   background-color: transparent;
   margin-top: 0.5em;
+  caret-color: ${props => props.theme.colors.red};
 
   &:focus {
     outline: none;

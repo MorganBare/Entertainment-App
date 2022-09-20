@@ -9,7 +9,7 @@ const BookMark = () => {
 
   return (
     <LayoutContainer>
-      <div style={{ paddingLeft: "1.5em" }}>
+      <div>
         <SideBar />
       </div>
       <div>

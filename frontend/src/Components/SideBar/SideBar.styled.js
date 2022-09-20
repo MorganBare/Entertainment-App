@@ -10,20 +10,27 @@ export const SideBarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2em;
+  margin-left: 1.5em;
 
   svg {
     transform: scale(1);
 
     // on hover change the color of the svg icon
-    &:hover {
-      fill: #fff;
+    &:hover path{
+      fill: ${({ theme }) => theme.colors.red};
     }
   }
 
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: row;
-    min-height: 70px !important;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 100%;
+    height: 56px;
+    min-height: 56px;
+    margin: 0;
+    padding: 1em;
   }
 `;
 
@@ -38,5 +45,13 @@ export const MainLinksContainer = styled.div`
 
   div {
     height: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: auto;
+    margin: 0;
   }
 `;

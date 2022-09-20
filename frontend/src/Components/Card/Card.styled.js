@@ -5,9 +5,6 @@ width: 154px;
 position: relative;
 border-radius: 5px;
 justify-self: center;
-background-color: hsla(223, 36%, 14%, 0.4);
--webkit-box-shadow: 0px 7px 23px 2px rgba(0,0,0,0.82); 
-box-shadow: 0px 7px 23px 2px rgba(0,0,0,0.82);
 
 &:hover {
   cursor: pointer;
