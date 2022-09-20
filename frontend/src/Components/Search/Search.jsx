@@ -1,6 +1,6 @@
 import React from "react";
-import { SearchContainer, SearchInput } from "./Search.styled.js";
-import { ReactComponent as SearchIcon } from "../../assets/icon-search.svg";
+import { SearchInput, SearchContainer } from "./Search.styled.js"
+import { ReactComponent as SearchIcon} from "../../assets/icon-search.svg"
 
 const Search = ({ title, search, setSearch }) => {
   return (

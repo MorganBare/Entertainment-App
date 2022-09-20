@@ -2,8 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { ReactComponent as MovieIcon } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as TvSeries } from "../../assets/icon-nav-tv-series.svg";
+import Oval from "../../assets/Oval.png"
 import { ReactComponent as BookMarkFill } from "../../assets/icon-bookmark-full.svg";
 import { ReactComponent as BookMarkIcon } from "../../assets/icon-bookmark-empty.svg";
+
 import {
   CardContainer,
   ImageContainer,
@@ -46,15 +48,13 @@ const Card = ({ movie, mytitle }) => {
         <CardImage src={`${imagePrefix}${poster_path}`} />
       </ImageContainer>
       <CardContent>
-        <Info>{formatDate} .</Info>
+        <Info>{formatDate}</Info>
+        <img src={Oval} alt='Oval'/>
 
-        {media_type === "movie" ? (
-          <MovieIcon className="hover" />
-        ) : (
-          <TvSeries className="hover" />
-        )}
-
-        <Info>{media_type} .</Info>
+        <Info>{media_type === "movie" ? <MovieIcon/> : <TvSeries/>}</Info>
+        <Info>{media_type === 'tv' ? 'TV Series' : 'Movie'}</Info>
+        
+        <img src={Oval} alt='Oval'/>
         <Info>{adult ? "18+" : "PG"}</Info>
       </CardContent>
       <CardTitle>{title ?? name}</CardTitle>

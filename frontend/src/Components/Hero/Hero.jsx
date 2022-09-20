@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 import { Card, Search } from "../../Components";
-import { HeroContainer, Row } from "./Hero.styled";
-import { Info } from "../Card/Card.styled";
+import { HeroContainer, Row, Title } from "./Hero.styled";
 
 const Hero = ({ movies, title }) => {
   const [search, setSearch] = useState("");
@@ -11,15 +10,7 @@ const Hero = ({ movies, title }) => {
     <HeroContainer>
       <Search title={title} search={search} setSearch={setSearch} />
       <section>
-        <Info
-          padding=".5em 0"
-          display="block"
-          fontSize="32px"
-          color="fff"
-          fontWeight="300"
-        >
-          {title}
-        </Info>
+          <Title>{title}</Title>
         <Row>
           {movies &&
             movies
