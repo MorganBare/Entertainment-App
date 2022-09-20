@@ -6,9 +6,8 @@ export const HeroContainer = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(154px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(154px, 154px) );
   grid-gap: 1em;
-  padding: 1em;
 `;
 
 
@@ -16,5 +15,4 @@ export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.HeadingL};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
-  padding-left: 10px;
 `;
