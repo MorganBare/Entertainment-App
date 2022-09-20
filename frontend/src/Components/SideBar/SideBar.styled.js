@@ -9,6 +9,7 @@ export const SideBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 2em;
   margin-left: 1.5em;
 
@@ -41,6 +42,7 @@ export const MainLinksContainer = styled.div`
   height: 200px;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
   margin-top: 3em;
 
   div {
@@ -54,4 +56,14 @@ export const MainLinksContainer = styled.div`
     height: auto;
     margin: 0;
   }
+`;
+
+export const Profile = styled.div`
+
+
+img {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
 `;

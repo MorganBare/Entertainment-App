@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SideBarContainer, MainLinksContainer } from "./SideBar.styled";
+import { SideBarContainer, MainLinksContainer, Profile } from "./SideBar.styled";
 import { ReactComponent as Movies } from "../../assets/icon-nav-movies.svg";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as BookMark } from "../../assets/icon-nav-bookmark.svg";
 import { ReactComponent as TV } from "../../assets/icon-nav-tv-series.svg";
 import { ReactComponent as Home } from "../../assets/icon-nav-home.svg";
+import ProfileImage from "../../assets/image-avatar.png";
 
 const SideBar = () => {
   return (
     <SideBarContainer>
+      <div>
       <div>
         <Logo />
       </div>
@@ -35,6 +37,10 @@ const SideBar = () => {
         </Link>
       </div>
       </MainLinksContainer>
+      </div>
+      <Profile>
+        <img src={ProfileImage} alt='profile'/>
+      </Profile>
     </SideBarContainer>
   );
 };
