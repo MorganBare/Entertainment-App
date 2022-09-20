@@ -51,13 +51,10 @@ const Card = ({ movie, mytitle }) => {
         <Info>{formatDate}</Info>
         <img src={Oval} alt='Oval'/>
 
-        {media_type === "movie" ? (
-          <MovieIcon className="hover" />
-        ) : (
-          <TvSeries className="hover" />
-        )}
-
-        <Info>{media_type} .</Info>
+        <Info>{media_type === "movie" ? <MovieIcon/> : <TvSeries/>}</Info>
+        <Info>{media_type === 'tv' ? 'TV Series' : 'Movie'}</Info>
+        
+        <img src={Oval} alt='Oval'/>
         <Info>{adult ? "18+" : "PG"}</Info>
       </CardContent>
       <CardTitle>{title ?? name}</CardTitle>
