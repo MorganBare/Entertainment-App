@@ -52,18 +52,37 @@ export const MainLinksContainer = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+  }
+`;
+
+export const IconDiv = styled.div`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
     height: auto;
     margin: 0;
+    width: 70%;
+    justify-content: space-between;
   }
 `;
 
 export const Profile = styled.div`
 
 
-img {
-  border: 1px solid white;
-  border-radius: 20px;
-}
+  img {
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 30px;
+
+    img {
+      height: 30px;
+    }
+  }
 
 `;
