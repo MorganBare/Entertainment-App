@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-width: 154px;
-position: relative;
-border-radius: 5px;
-justify-self: center;
+  width: 154px;
+  position: relative;
+  border-radius: 5px;
+  justify-self: center;
+  transition: all 0.3s ease-in-out;
 
-&:hover {
-  cursor: pointer;
-  background-color: hsla(223, 36%, 14%, 0.8);
-  transform: scale(1.05);
-}
+  &:hover {
+    cursor: pointer;
+    background-color: hsla(223, 36%, 14%, 0.8);
+    transform: scale(1.05);
+  }
 `;
 export const ImageContainer = styled.div`
   margin: 0 auto;
@@ -24,8 +25,8 @@ export const CardContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: .5em;
-  padding-inline: .2em;
+  padding-top: 0.5em;
+  padding-inline: 0.2em;
   svg {
     transform: scale(0.7);
   }
@@ -37,8 +38,8 @@ export const CardTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.BodyM};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
-  padding-top: .5em;
-  padding-bottom: .3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
   text-align: center;
 `;
 export const Paragraph = styled.p`
