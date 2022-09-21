@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Card, Search } from "../../Components";
 import { HeroContainer, Row, Title, Section } from "./Hero.styled";
 
-const Hero = ({ movies, title }) => {
+const Hero = ({ movies, title, isBookmarked }) => {
   const [search, setSearch] = useState("");
 
   return (
     <HeroContainer>
       <Search title={title} search={search} setSearch={setSearch} />
       <Section>
-          <Title>{title}</Title>
-        <Row>
+        <Title>{title}</Title>
+        <Row isBookmarked={isBookmarked}>
           {movies &&
             movies
               .filter((movie) => {
