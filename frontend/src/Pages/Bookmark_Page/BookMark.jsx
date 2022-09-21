@@ -13,7 +13,7 @@ const BookMark = () => {
         <SideBar />
       </div>
       <div>
-        <Hero isBookmarked movies={bookMarkedMovies} title="Book marked" />
+        <Hero movies={bookMarkedMovies} title="Book marked" />
       </div>
     </LayoutContainer>
   );

@@ -6,11 +6,7 @@ export const HeroContainer = styled.div`
 
 export const Row = styled.div`
   display: grid;
-
-  grid-template-columns: ${({ isBookmarked }) =>
-    isBookmarked
-      ? "repeat(auto-fit, minmax(154px, 154px))"
-      : "repeat(auto-fit, minmax(154px, 1fr))"};
+  grid-template-columns: repeat(6, minmax(154px, 1fr));
 
   grid-gap: 1em;
 `;
